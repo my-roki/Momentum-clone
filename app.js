@@ -1,16 +1,9 @@
-const h1 = document.querySelector("div.hello:first-child h1");
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
 
-function handleTitleClick() {
-  const activeClass = "active";
-
-  // //   toggle
-  //   if (h1.classList.contains(activeClass)) {
-  //     h1.classList.remove(activeClass);
-  //   } else {
-  //     h1.classList.add(activeClass);
-  //   }
-
-  h1.classList.toggle(activeClass);
+function onLoginSubmit(event) {
+  event.preventDefault();
+  console.log(loginInput.value);
 }
 
-h1.addEventListener("click", handleTitleClick);
+loginForm.addEventListener("sumit", onLoginSubmit);
