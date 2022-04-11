@@ -15,7 +15,7 @@ function createToDo(newTodoObj) {
 
   li.id = newTodoObj.id;
   span.innerText = newTodoObj.text;
-  button.innerText = "❌";
+  button.innerText = "✘";
 
   li.appendChild(span);
   li.appendChild(button);

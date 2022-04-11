@@ -8,32 +8,72 @@
     <title>Momentum</title>
   </head>
   <body>
-    <h2 id="clock">This context may be some problem in the clock...</h2>
-    <form id="login-form" class="hidden">
-      <input
-        required
-        maxlength="15"
-        type="text"
-        placeholder="What is your name?"
-      />
-      <input type="submit" value="Log In" />
-    </form>
-
-    <h1 id="greeting" class="hidden"></h1>
-
-    <form id="todo-form">
-      <input required type="text" placeholder="Write a To Do and Press Enter" />
-    </form>
-    <ul id="todo-list"></ul>
-
-    <div id="quote">
-      <span>If you saw this quote, the quote is not coming out well.</span>
-      <span>Administrator</span>
+    <div class="region_top">
+      <div id="clear" class="region_top_left">
+        <span>clear</span>
+      </div>
+      <div id="change-bg" class="region_top_left">
+        <span>change background</span>
+      </div>
+      <div id="weather" class="region_top_right">
+        <div class="temperture">
+          <img src="" width="40px" height="40px" />
+          <span>null</span>
+        </div>
+        <div class="location">
+          <span>null</span>
+        </div>
+      </div>
     </div>
+
+    <div class="region_middle">
+      <h2 id="clock">This context may be some problem in the clock...</h2>
+      <form id="login-form" class="hidden">
+        <input
+          required
+          type="text"
+          maxlength="15"
+          placeholder="What is your name?"
+        />
+        <input type="submit" value="Log In" />
+      </form>
+
+      <h1 id="greeting" class="hidden"></h1>
+      <div id="search">
+        <form action="">
+          <span>searching form</span>
+        </form>
+      </div>
+    </div>
+
+    <div class="region_bottom">
+      <div class="region_bottom_left">setting</div>
+      <div class="region_bottom_center">
+        <div id="quote">
+          <span>the Quote is coming...</span>
+          <span>Administrator</span>
+        </div>
+      </div>
+      <div class="region_bottom_right">
+        <ul id="todo-list"></ul>
+        <form id="todo-form">
+          <span>Todo</span>
+          <input
+            required
+            class="hidden"
+            type="text"
+            placeholder="Write a To Do and Press Enter"
+          />
+        </form>
+      </div>
+    </div>
+
+    <script src="javaScript/variables.js"></script>
     <script src="javaScript/greeting.js"></script>
     <script src="javaScript/clock.js"></script>
     <script src="javaScript/quotes.js"></script>
     <script src="javaScript/background.js"></script>
     <script src="javaScript/todo.js"></script>
+    <script src="javaScript/weather.js"></script>
   </body>
 </html>

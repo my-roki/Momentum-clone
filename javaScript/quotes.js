@@ -53,13 +53,20 @@ const author = document.querySelector("#quote span:last-child");
 // const todaysQuote = quotes[Math.round(Math.random() * quotes.length)];
 const url = "https://api.quotable.io/random";
 
-fetch(url)
-  .then((response) => response.json())
-  .then((response) => {
-    quote.innerText = response.content;
-    author.innerText = response.author;
-  })
-  .catch((error) => console.log("error:", error));
+function getQuote(url) {
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.content.length < 80) {
+        quote.innerText = data.content;
+        author.innerText = data.author;
+      } else {
+        getQuote(url);
+      }
+    })
+    .catch((error) => console.log("error:", error));
+}
 
+getQuote(url);
 // quote.innerText = todaysQuote.quote;
 // author.innerText = todaysQuote.author;
