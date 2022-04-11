@@ -1,7 +1,11 @@
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
 const greeting = document.querySelector("#greeting");
-const clearKey = document.querySelector("#clear");
+const clearButton = document.querySelector("#clear span:first-child");
+
+const search = document.querySelector("#search");
+const searchButton = document.querySelector("#search .right span");
+const searchInput = document.querySelector("#search form input");
 
 function onLoginSubmit(event) {
   event.preventDefault();
@@ -12,7 +16,7 @@ function onLoginSubmit(event) {
   localStorage.setItem("username", username);
 }
 
-function onLogoutSumit() {
+function onLogoutSubmit() {
   localStorage.clear();
   window.location.reload();
 }
@@ -34,6 +38,13 @@ function getGreetingMessage(username) {
     }
   }
   greeting.classList.remove("hidden");
+  search.classList.remove("hidden");
+}
+
+function onSearchSubmit() {
+  window.location.assign(
+    `https://www.google.com/search?q=${searchInput.value}`,
+  );
 }
 
 const savedUserName = localStorage.getItem("username");
@@ -44,4 +55,5 @@ if (savedUserName) {
   loginForm.addEventListener("submit", onLoginSubmit);
 }
 
-clearKey.addEventListener("click", onLogoutSumit);
+clearButton.addEventListener("click", onLogoutSubmit);
+searchButton.addEventListener("click", onSearchSubmit);

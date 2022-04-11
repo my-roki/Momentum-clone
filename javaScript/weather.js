@@ -1,5 +1,5 @@
-const tempertureIcon = document.querySelector(".temperture img");
-const temperture = document.querySelector(".temperture span");
+const tempertureIcon = document.querySelector("#temperture img");
+const temperture = document.querySelector("#temperture span");
 const city = document.querySelector("#weather div:last-child span");
 
 function onGeoSuccess(position) {

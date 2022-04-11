@@ -6,9 +6,15 @@ const images = [
   "sample4.jpg",
   "sample5.jpg",
 ];
-const chosenImage = images[Math.floor(Math.random() * images.length)];
 const backgroundImage = document.createElement("img");
+const imageButton = document.querySelector("#change-bg img");
 
-backgroundImage.id = "background_image";
-backgroundImage.src = `image/${chosenImage}`;
-document.body.appendChild(backgroundImage);
+function changeBackground() {
+  const chosenImage = images[Math.floor(Math.random() * images.length)];
+  backgroundImage.id = "background_image";
+  backgroundImage.src = `image/${chosenImage}`;
+  document.body.appendChild(backgroundImage);
+}
+
+changeBackground();
+imageButton.addEventListener("click", changeBackground);
