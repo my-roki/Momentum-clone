@@ -4,8 +4,10 @@ const greeting = document.querySelector("#greeting");
 const clearButton = document.querySelector("#clear span:first-child");
 
 const search = document.querySelector("#search");
-const searchButton = document.querySelector("#search .right span");
+const searchButton = document.querySelector("#search form i:last-child");
 const searchInput = document.querySelector("#search form input");
+
+const gitButton = document.querySelector("#git");
 
 function onLoginSubmit(event) {
   event.preventDefault();
@@ -55,5 +57,10 @@ if (savedUserName) {
   loginForm.addEventListener("submit", onLoginSubmit);
 }
 
+clearButton.style.cursor = "pointer";
+gitButton.style.cursor = "pointer";
 clearButton.addEventListener("click", onLogoutSubmit);
 searchButton.addEventListener("click", onSearchSubmit);
+gitButton.addEventListener("click", () => {
+  window.location.assign("https://github.com/my-roki");
+});

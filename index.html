@@ -6,28 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <title>Momentum</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    <script
+      src="https://kit.fontawesome.com/8f89665c52.js"
       crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    ></script>
   </head>
   <body>
     <div class="region_top">
       <div id="clear" class="region_top_left">
         <span>clear</span>
         <span> | </span>
-      </div>
-      <div id="change-bg">
-        <img
-          title="Change Background"
-          src="icon/change_bg_white.png"
-          alt="Change Background"
-          width="30px"
-          height="30px"
-        />
+        <i class="fa-solid fa-images"></i>
       </div>
       <div id="weather" class="region_top_right">
         <div id="temperture">
@@ -41,33 +30,39 @@
     </div>
 
     <div class="region_middle">
-      <h2 id="clock">This context may be some problem in the clock...</h2>
+      <h1 id="clock">This context may be some problem in the clock...</h1>
       <form id="login-form" class="hidden">
         <span>Welcome. What is your name?</span>
         <input class="text-input" required type="text" maxlength="15" />
         <input type="submit" value="✔" />
       </form>
 
-      <h1 id="greeting" class="hidden"></h1>
+      <h2 id="greeting" class="hidden"></h2>
       <div id="search" class="hidden">
-        <form action="">
-          <div class="source left">
-            <span>
-              <i class="fa-brands fa-google"></i>
-            </span>
-          </div>
-          <div class="source right">
-            <span>
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </span>
-          </div>
+        <form action="#">
+          <i class="fa-brands fa-google"></i>
           <input type="text" placeholder=" Search" />
+          <i class="fa-solid fa-magnifying-glass"></i>
         </form>
       </div>
     </div>
 
+    <aside id="jsSide">
+      <div class="todo">
+        <form id="todo-aside" #>
+          <input required type="text" placeholder="Write a To Do" />
+          <input type="submit" value="Go!" />
+        </form>
+        <ul id="jsTodoList" class="todo-list"></ul>
+      </div>
+    </aside>
     <div class="region_bottom">
-      <div class="region_bottom_left">setting</div>
+      <div class="region_bottom_left">
+        <span id="git">
+          <i class="fa-brands fa-github"></i>
+          my-roki
+        </span>
+      </div>
       <div class="region_bottom_center">
         <div id="quote">
           <span>the Quote is coming...</span>
@@ -75,15 +70,8 @@
         </div>
       </div>
       <div class="region_bottom_right">
-        <ul id="todo-list"></ul>
         <form id="todo-form">
           <span>Todo</span>
-          <input
-            required
-            class="hidden"
-            type="text"
-            placeholder="Write a To Do and Press Enter"
-          />
         </form>
       </div>
     </div>

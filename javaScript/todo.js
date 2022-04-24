@@ -1,4 +1,7 @@
 //TODO: make CRUD system.
+const sideBar = document.querySelector("#jsSide");
+const todoButton = document.querySelector("#todo-form span");
+
 const toDoForm = document.querySelector("#todo-form");
 const toDoInput = toDoForm.querySelector("input");
 const toDoList = document.querySelector("#todo-list");
@@ -51,3 +54,16 @@ if (savedToDo) {
   toDoStorage = initialToDo;
   initialToDo.forEach(createToDo);
 }
+
+function openSideBar() {
+  sideBar.style.transform = "translateX(-12px)";
+  todoButton.removeEventListener("click", openSideBar);
+  todoButton.addEventListener("click", closeSideBar);
+}
+function closeSideBar() {
+  sideBar.style.transform = "translateX(100%)";
+  todoButton.removeEventListener("click", closeSideBar);
+  todoButton.addEventListener("click", openSideBar);
+}
+
+todoButton.addEventListener("click", openSideBar);
