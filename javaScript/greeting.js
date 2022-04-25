@@ -44,9 +44,13 @@ function getGreetingMessage(username) {
 }
 
 function onSearchSubmit() {
-  window.location.assign(
-    `https://www.google.com/search?q=${searchInput.value}`,
-  );
+  if (searchInput.value === "") {
+    return;
+  } else {
+    window.location.assign(
+      `https://www.google.com/search?q=${searchInput.value}`,
+    );
+  }
 }
 
 const savedUserName = localStorage.getItem("username");

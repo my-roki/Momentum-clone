@@ -225,16 +225,8 @@ aside::-webkit-scrollbar {
   display: none;
 }
 
-aside > *:not(:first-child) {
+aside > div {
   margin-top: 1rem;
-}
-
-aside > *:not(:last-child) {
-  background-color: rgba(233, 222, 222, 0.918);
-}
-
-aside > *:last-child > * {
-  background-color: rgba(233, 222, 222, 0.918);
 }
 
 #todo-aside {
@@ -261,12 +253,35 @@ aside > *:last-child > * {
   font-style: italic;
 }
 
-#todo-aside input:last-child {
-  color: var(--default-color);
+#todo-aside input:last-child,
+#todo-list > li > button {
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
   outline: none;
   background: none;
   border: none;
   cursor: pointer;
+}
+
+#todo-list {
+  padding: 0;
+}
+
+#todo-list > li {
+  list-style: none;
+  display: flex;
+  flex: 1 1 auto;
+}
+
+#todo-list > li > * {
+  margin: 0;
+  padding: 2px 12px;
+}
+
+#todo-list > li > span {
+  width: 250px;
+  font-size: 16px;
 }
 
 .hidden {

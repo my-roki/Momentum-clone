@@ -1,14 +1,27 @@
 //TODO: make CRUD system.
+//TODO: align text when text length is too long.
 const sideBar = document.querySelector("#jsSide");
 const todoButton = document.querySelector("#todo-form span");
 
-const toDoForm = document.querySelector("#todo-form");
+const toDoForm = document.querySelector("#todo-aside");
 const toDoInput = toDoForm.querySelector("input");
-const toDoList = document.querySelector("#todo-list");
+let toDoList = document.querySelector("#todo-list");
 
 let toDoStorage = [];
 function saveToDoStorage() {
   window.localStorage.setItem("ToDo", JSON.stringify(toDoStorage));
+}
+
+function openSideBar() {
+  sideBar.style.transform = "translateX(-12px)";
+  todoButton.removeEventListener("click", openSideBar);
+  todoButton.addEventListener("click", closeSideBar);
+}
+
+function closeSideBar() {
+  sideBar.style.transform = "translateX(100%)";
+  todoButton.removeEventListener("click", closeSideBar);
+  todoButton.addEventListener("click", openSideBar);
 }
 
 function createToDo(newTodoObj) {
@@ -18,6 +31,7 @@ function createToDo(newTodoObj) {
 
   li.id = newTodoObj.id;
   span.innerText = newTodoObj.text;
+
   button.innerText = "✘";
 
   li.appendChild(span);
@@ -46,8 +60,6 @@ function handleToDoInput(event) {
   saveToDoStorage();
 }
 
-toDoForm.addEventListener("submit", handleToDoInput);
-
 const savedToDo = localStorage.getItem("ToDo");
 if (savedToDo) {
   const initialToDo = JSON.parse(savedToDo);
@@ -55,15 +67,5 @@ if (savedToDo) {
   initialToDo.forEach(createToDo);
 }
 
-function openSideBar() {
-  sideBar.style.transform = "translateX(-12px)";
-  todoButton.removeEventListener("click", openSideBar);
-  todoButton.addEventListener("click", closeSideBar);
-}
-function closeSideBar() {
-  sideBar.style.transform = "translateX(100%)";
-  todoButton.removeEventListener("click", closeSideBar);
-  todoButton.addEventListener("click", openSideBar);
-}
-
 todoButton.addEventListener("click", openSideBar);
+toDoForm.addEventListener("submit", handleToDoInput);
