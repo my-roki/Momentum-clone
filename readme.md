@@ -21,7 +21,7 @@
 - [x] Searching Form
 - [x] Update to-do list using modal(aside) pop up page.
 
-### 추가 구현 기능
+### What I Should Do.
 
 - [] Dynamic Web Page.
 - [] Check-box and underline when to-do list done.
