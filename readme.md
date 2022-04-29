@@ -1,7 +1,7 @@
 # Chrome Momentum Clone
 
 <img src="./thumbnail.png">
-<a href="https://my-roki.github.io/momentum-clone/" target="_blank">github.io page</a>
+<a href="https://my-roki.github.io/momentum_clone/" target="_blank">github.io page</a>
 
 ### What I Learned.
 
