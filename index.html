@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
     <title>Momentum</title>
     <script
@@ -12,13 +13,16 @@
     ></script>
   </head>
   <body>
-    <div class="region_top">
-      <div id="clear" class="region_top_left">
-        <span>clear</span>
+    <header>
+      <div id="topleft-bar" class="header__topleft">
+        <span id="clear-button">clear</span>
         <span> | </span>
-        <i class="fa-solid fa-images"></i>
+        <span id="changbg-button">
+          <i class="fa-solid fa-images"></i>
+        </span>
       </div>
-      <div id="weather" class="region_top_right">
+
+      <div id="weather" class="header__topright">
         <div id="temperture">
           <img src="" alt="weather icon" width="40px" height="40px" />
           <span>null</span>
@@ -27,27 +31,39 @@
           <span>null</span>
         </div>
       </div>
-    </div>
+    </header>
 
-    <div class="region_middle">
-      <h1 id="clock">This context may be some problem in the clock...</h1>
-      <form id="login-form" class="hidden">
-        <span>Welcome. What is your name?</span>
-        <input class="text-input" required type="text" maxlength="15" />
-        <input type="submit" value="✔" />
-      </form>
-
-      <h2 id="greeting" class="hidden"></h2>
-      <div id="search" class="hidden">
-        <form action="#">
-          <i class="fa-brands fa-google"></i>
-          <input type="text" placeholder=" Search" />
-          <i class="fa-solid fa-magnifying-glass"></i>
+    <main>
+      <div class="region_middle_top">
+        <h1 id="clock" class="clock">
+          This context may be some problem in the clock...
+        </h1>
+        <form id="login-form" class="login-form hidden">
+          <span>Wellcome. What is your name?</span>
+          <input class="text-input" required type="text" maxlength="15" />
+          <input type="submit" value="✔" />
         </form>
-      </div>
-    </div>
 
-    <aside id="jsSide">
+        <h2 id="greeting" class="greeting"></h2>
+      </div>
+      <div class="region_middle_bottom">
+        <div id="search" class="search hidden">
+          <form action="#" id="search-form">
+            <i class="fa-brands fa-google"></i>
+            <input type="text" placeholder=" Search" />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </form>
+        </div>
+        <div class="focus">
+          <form action="" class="focus-form hidden">
+            <span>What is your main focus for today?</span>
+            <input type="text" />
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- <aside id="jsSide">
       <div class="todo">
         <form id="todo-aside">
           <input required type="text" placeholder="Write a To Do" />
@@ -55,8 +71,9 @@
         </form>
         <ul id="todo-list"></ul>
       </div>
-    </aside>
-    <div class="region_bottom">
+    </aside> -->
+
+    <footer>
       <div class="region_bottom_left">
         <span id="git">
           <i class="fa-brands fa-github"></i>
@@ -64,24 +81,23 @@
         </span>
       </div>
       <div class="region_bottom_center">
-        <div id="quote">
+        <div id="quote" class="quote">
           <span>the Quote is coming...</span>
           <span>Administrator</span>
         </div>
       </div>
       <div class="region_bottom_right">
-        <form id="todo-form">
-          <span>Todo</span>
-        </form>
+        <span>&larr; Todo</span>
+        <span>&larr; Calender</span>
       </div>
-    </div>
+    </footer>
 
     <script src="javaScript/variables.js"></script>
     <script src="javaScript/greeting.js"></script>
     <script src="javaScript/clock.js"></script>
     <script src="javaScript/quotes.js"></script>
     <script src="javaScript/background.js"></script>
-    <script src="javaScript/todo.js"></script>
+    <!-- <script src="javaScript/todo.js"></script> -->
     <script src="javaScript/weather.js"></script>
   </body>
 </html>

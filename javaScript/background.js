@@ -7,7 +7,7 @@ const images = [
   "sample5.jpg",
 ];
 const backgroundImage = document.createElement("img");
-const imageButton = document.querySelector("#clear i");
+const imageButton = document.querySelector("#changbg-button");
 
 function changeBackground() {
   const chosenImage = images[Math.floor(Math.random() * images.length)];
@@ -17,5 +17,4 @@ function changeBackground() {
 }
 
 changeBackground();
-imageButton.style.cursor = "pointer";
 imageButton.addEventListener("click", changeBackground);

@@ -1,11 +1,12 @@
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
 const greeting = document.querySelector("#greeting");
-const clearButton = document.querySelector("#clear span:first-child");
+const clearButton = document.querySelector("#clear-button");
 
 const search = document.querySelector("#search");
-const searchButton = document.querySelector("#search form i:last-child");
-const searchInput = document.querySelector("#search form input");
+const searchForm = document.getElementById("search-form");
+const searchButton = document.querySelector("#search-form i:last-child");
+const searchInput = document.querySelector("#search-form input");
 
 const gitButton = document.querySelector("#git");
 
@@ -43,12 +44,13 @@ function getGreetingMessage(username) {
   search.classList.remove("hidden");
 }
 
-function onSearchSubmit() {
+function onSearchSubmit(event) {
+  event.preventDefault();
   if (searchInput.value === "") {
     return;
   } else {
     window.location.assign(
-      `https://www.google.com/search?q=${searchInput.value}`,
+      `https://www.google.com/search?q=${searchInput.value}`
     );
   }
 }
@@ -64,6 +66,8 @@ if (savedUserName) {
 clearButton.style.cursor = "pointer";
 gitButton.style.cursor = "pointer";
 clearButton.addEventListener("click", onLogoutSubmit);
+
+searchForm.addEventListener("submit", onSearchSubmit);
 searchButton.addEventListener("click", onSearchSubmit);
 gitButton.addEventListener("click", () => {
   window.location.assign("https://github.com/my-roki");

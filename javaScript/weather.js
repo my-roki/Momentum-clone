@@ -1,6 +1,6 @@
-const tempertureIcon = document.querySelector("#temperture img");
-const temperture = document.querySelector("#temperture span");
-const city = document.querySelector("#weather div:last-child span");
+const tempertureIcon = document.querySelector("#temperture>img");
+const temperture = document.querySelector("#temperture>span");
+const city = document.querySelector("#location>span");
 
 function onGeoSuccess(position) {
   const latitude = position.coords.latitude;
