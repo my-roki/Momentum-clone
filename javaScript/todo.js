@@ -7,6 +7,8 @@ const todoButton = document.querySelector("#todo-button");
 const toDoForm = document.querySelector("#todo-form");
 const toDoInput = toDoForm.querySelector("input");
 
+const opacityRanges = document.querySelectorAll(".opacity");
+
 let toDoList = document.querySelector("#todo-list");
 
 let toDoStorage = [];
@@ -14,16 +16,17 @@ function saveToDoStorage() {
   window.localStorage.setItem("ToDo", JSON.stringify(toDoStorage));
 }
 
-function openSideBar() {
+function openTodoSideBar() {
+  closeCalSideBar();
   toDoSide.style.transform = "translateX(-16px)";
-  todoButton.removeEventListener("click", openSideBar);
-  todoButton.addEventListener("click", closeSideBar);
+  todoButton.removeEventListener("click", openTodoSideBar);
+  todoButton.addEventListener("click", closeTodoSideBar);
 }
 
-function closeSideBar() {
+function closeTodoSideBar() {
   toDoSide.style.transform = "translateX(100%)";
-  todoButton.removeEventListener("click", closeSideBar);
-  todoButton.addEventListener("click", openSideBar);
+  todoButton.removeEventListener("click", closeTodoSideBar);
+  todoButton.addEventListener("click", openTodoSideBar);
 }
 
 function createToDo(newTodoObj) {
@@ -119,6 +122,12 @@ function handleToDoInput(event) {
   saveToDoStorage();
 }
 
+function handleOpacity(event) {
+  const opacity = event.target.value;
+  const div = event.target.parentElement;
+  div.style.opacity = opacity;
+}
+
 const savedToDo = localStorage.getItem("ToDo");
 if (savedToDo) {
   const initialToDo = JSON.parse(savedToDo);
@@ -140,5 +149,9 @@ botRightButton.addEventListener("mouseleave", () => {
   });
 });
 
-todoButton.addEventListener("click", openSideBar);
+todoButton.addEventListener("click", openTodoSideBar);
 toDoForm.addEventListener("submit", handleToDoInput);
+
+opacityRanges.forEach((range) =>
+  range.addEventListener("input", handleOpacity)
+);
