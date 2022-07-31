@@ -15,10 +15,11 @@
   <body>
     <header>
       <div id="topleft-bar" class="header__topleft">
-        <span id="clear-button">clear</span>
-        <span> | </span>
+        <span id="clear-button">
+          <i class="fa-solid fa-arrow-right-from-bracket fa-lg"></i>
+        </span>
         <span id="changbg-button">
-          <i class="fa-solid fa-images"></i>
+          <i class="fa-solid fa-panorama fa-lg"></i>
         </span>
       </div>
 
@@ -62,17 +63,6 @@
         </div>
       </div>
     </main>
-
-    <!-- <aside id="jsSide">
-      <div class="todo">
-        <form id="todo-aside">
-          <input required type="text" placeholder="Write a To Do" />
-          <input type="submit" value="Go!" />
-        </form>
-        <ul id="todo-list"></ul>
-      </div>
-    </aside> -->
-
     <footer>
       <div class="region_bottom_left">
         <span id="git">
@@ -86,18 +76,35 @@
           <span>Administrator</span>
         </div>
       </div>
-      <div class="region_bottom_right">
-        <span>&larr; Todo</span>
-        <span>&larr; Calender</span>
+      <div id="bottom-right" class="region_bottom_right">
+        <div id="bars">
+          <i class="fa-solid fa-bars fa-lg"></i>
+        </div>
+        <div id="todo-button" class="bottom-right__column hidden">
+          <i class="fa-solid fa-check-double fa-lg"></i>
+        </div>
+        <div id="calander-button" class="bottom-right__column hidden">
+          <i class="fa-solid fa-calendar-days fa-lg"></i>
+        </div>
       </div>
     </footer>
 
-    <script src="javaScript/variables.js"></script>
-    <script src="javaScript/greeting.js"></script>
-    <script src="javaScript/clock.js"></script>
-    <script src="javaScript/quotes.js"></script>
-    <script src="javaScript/background.js"></script>
-    <!-- <script src="javaScript/todo.js"></script> -->
-    <script src="javaScript/weather.js"></script>
+    <div id="todo-side" class="todo">
+      <input type="range" class="opacity" />
+      <form id="todo-form">
+        <input required type="text" placeholder="Write a To Do" />
+        <button>
+          <i class="fa-brands fa-golang"></i>
+        </button>
+      </form>
+      <ul id="todo-list"></ul>
+    </div>
   </body>
+  <script src="javaScript/variables.js"></script>
+  <script src="javaScript/greeting.js"></script>
+  <script src="javaScript/clock.js"></script>
+  <script src="javaScript/quotes.js"></script>
+  <script src="javaScript/background.js"></script>
+  <script src="javaScript/todo.js"></script>
+  <script src="javaScript/weather.js"></script>
 </html>
