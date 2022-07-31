@@ -22,7 +22,7 @@ function closeCalSideBar() {
 function calendarInit(events) {
   const calendarEl = document.getElementById("calendar");
   const calendar = new FullCalendar.Calendar(calendarEl, {
-    height: "700px", // calendar 높이 설정
+    height: "480px", // calendar 높이 설정
     expandRows: true, // 화면에 맞게 높이 재설정
     slotMinTime: "08:00", // Day 캘린더에서 시작 시간
     slotMaxTime: "20:00", // Day 캘린더에서 종료 시간
